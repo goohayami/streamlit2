@@ -3,29 +3,25 @@ from PIL import Image
 import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
+import webbrowser
 
 
 
 
 
-st.title('タイトル')
-st.header('ここはヘッダー')
-st.subheader('サブヘッダーをつけてみる')
+
+
+st.title('真岡市の魅力')
+
 
 col1,col2 = st.columns(2)
 
 with col1:
-    st.text('テキストはここからはじまるよ。長い文章は,バックスラッシュ+nで\nで改行することが出来るよ。')
+    st.header('ＳＬの町')
+    st.subheader('着ていくものは何がいい？')
+    st.text('過去5年の平均気温を見てみると、決して高くは\nないけど、最高気温は2018年で30℃、去年は28.8\n℃になっているんだね。')
 
-    code = '''
-    iimport streamlit as st
-
-    st.title('タイトル')
-    st.header('ここはヘッダー')
-    st.subheader('サブヘッダーをつけてみる')
-    '''
-    st.code(code,language ='python')
-
+  
     image = Image.open('pika.jpg')
     st.image(image,width=200)
 
@@ -33,26 +29,34 @@ with col1:
         '今日の日付',
         datetime.date(2023,3,25))
 
-
-    with st.form(key="profile_form"):
-        name = st.text_input('お名前')
-        school = st.text_input('学校')
-        submit_btn = st.form_submit_button('送信')
-        cancel_btn = st.form_submit_button('キャンセル')
-    if submit_btn:
-        st.text(f'ようこそ{school}の{name}さん！')
-
+    
 
 with col2:
-
-    df = pd.read_csv('data.csv',index_col='月')
+    st.text("真岡市 4月の平均気温")
+    df = pd.read_csv('moka.csv',index_col='年')
     st.dataframe(df)
 
-    st.line_chart(df)
-    st.bar_chart(df['最高気温(℃)'])
+    # st.line_chart(df)
+    st.bar_chart(df['平均気温'])
 
-fig, ax = plt.subplots()
-ax.plot(df.index,df['最高気温(℃)'])
-ax.set_title('maximum temperature')
-st.pyplot(fig)
+
+st.header('おすすめグルメ')
+col1,col2 = st.columns(2)
+with col1:
+    st.text("道の駅 にしのみや")
+    image = Image.open('nisinomiya.jpg')
+    st.image(image,width=350)
+    image = Image.open('nisinomiya2.jpg')
+    st.image(image,width=350)
+with col2: 
+    st.text("宇都宮 みんみん")
+    image = Image.open('minmin.jpg')
+    st.image(image,width=350)
+    image = Image.open('minmin2.jpg')
+    st.image(image,width=350)
+
+submit_btn = st.button('真岡をもっと詳しく')
+
+if submit_btn == True: 
+   webbrowser.open('https://www.city.moka.lg.jp/citypromotion/about_moka/7644.html')
 
