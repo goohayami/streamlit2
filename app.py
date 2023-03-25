@@ -56,6 +56,6 @@ with col2:
 
 submit_btn = st.button('真岡をもっと詳しく')
 
-if submit_btn == True: 
+if submit_btn: 
    webbrowser.open('https://www.city.moka.lg.jp/citypromotion/about_moka/7644.html')
 
