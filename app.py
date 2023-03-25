@@ -44,15 +44,15 @@ col1,col2 = st.columns(2)
 with col1:
     st.text("道の駅 にしのみや")
     image = Image.open('nisinomiya.jpg')
-    st.image(image,width=340)
+    st.image(image,width=300)
     image = Image.open('nisinomiya2.jpg')
-    st.image(image,width=340)
+    st.image(image,width=300)
 with col2: 
     st.text("宇都宮 みんみん")
     image = Image.open('minmin.jpg')
-    st.image(image,width=340)
+    st.image(image,width=300)
     image = Image.open('minmin2.jpg')
-    st.image(image,width=340)
+    st.image(image,width=300)
 
 submit_btn = st.button('真岡をもっと詳しく')
 
