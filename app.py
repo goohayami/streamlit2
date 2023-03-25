@@ -50,8 +50,3 @@ with col2:
     st.line_chart(df)
     st.bar_chart(df['最高気温(℃)'])
 
-fig, ax = plt.subplots()
-ax.plot(df.index,df['最高気温(℃)'])
-ax.set_title('最高気温の遷移')
-st.pyplot(fig)
-    
