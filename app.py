@@ -26,7 +26,7 @@ st.text("真岡市 4月の平均気温")
 df = pd.read_csv('moka.csv',index_col='年')
 st.dataframe(df)
 image = Image.open('mouka.png')
-st.image(image,width=300)
+st.image(image,width=200)
 
 
 
@@ -35,15 +35,15 @@ st.header('おすすめグルメ')
 
 st.text("道の駅 にしのみや")
 image = Image.open('nisinomiya.jpg')
-st.image(image,width=300)
+st.image(image,width=200)
 image = Image.open('nisinomiya2.jpg')
-st.image(image,width=300)
+st.image(image,width=200)
 
 st.text("宇都宮 みんみん")
 image = Image.open('minmin.jpg')
-st.image(image,width=300)
+st.image(image,width=200)
 image = Image.open('minmin2.jpg')
-st.image(image,width=300)
+st.image(image,width=200)
 
 submit_btn = st.button('真岡をもっと詳しく')
 
