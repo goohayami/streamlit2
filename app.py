@@ -19,20 +19,15 @@ st.text('過去5年の平均気温を見てみると、決して高くは\nな�
 
   
 image = Image.open('pika.jpg')
-st.image(image,width=180)
-
-today = st.date_input(
-        '今日の日付',
-        datetime.date(2023,3,25))
-
+st.image(image,width=200)
     
-
 
 st.text("真岡市 4月の平均気温")
 df = pd.read_csv('moka.csv',index_col='年')
 st.dataframe(df)
+image = Image.open('mouka.png')
+st.image(image,width=300)
 
-st.bar_chart(df['平均気温'])
 
 
 st.header('おすすめグルメ')
