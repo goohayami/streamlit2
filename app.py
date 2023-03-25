@@ -51,3 +51,4 @@ with col2:
     st.line_chart(df)
     st.bar_chart(df['最高気温(℃)'])
 
+
