@@ -53,6 +53,6 @@ with col2:
 
 fig, ax = plt.subplots()
 ax.plot(df.index,df['最高気温(℃)'])
-ax.set_title('最高気温')
+ax.set_title('maximum temperature')
 st.pyplot(fig)
 
