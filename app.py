@@ -13,30 +13,26 @@ import webbrowser
 st.title('真岡市の魅力')
 
 
-col1,col2 = st.columns(2)
-
-with col1:
-    st.header('ＳＬの町')
-    st.subheader('着ていくものは何がいい？')
-    st.text('過去5年の平均気温を見てみると、決して高くは\nないけど、最高気温は2018年で30℃、去年は28.8\n℃になっているんだね。')
+st.header('ＳＬの町')
+st.subheader('着ていくものは何がいい？')
+st.text('過去5年の平均気温を見てみると、決して高くは\nないけど、最高気温は2018年で30℃、去年は28.8\n℃になっているんだね。')
 
   
-    image = Image.open('pika.jpg')
-    st.image(image,width=180)
+image = Image.open('pika.jpg')
+st.image(image,width=180)
 
-    today = st.date_input(
+today = st.date_input(
         '今日の日付',
         datetime.date(2023,3,25))
 
     
 
-with col2:
-    st.text("真岡市 4月の平均気温")
-    df = pd.read_csv('moka.csv',index_col='年')
-    st.dataframe(df)
 
-    # st.line_chart(df)
-    st.bar_chart(df['平均気温'])
+st.text("真岡市 4月の平均気温")
+df = pd.read_csv('moka.csv',index_col='年')
+st.dataframe(df)
+
+st.bar_chart(df['平均気温'])
 
 
 st.header('おすすめグルメ')
